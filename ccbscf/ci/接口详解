@@ -1,0 +1,12 @@
+1.平台端使命材料新增
+url:v1/pending/corps/identities/operator/submit
+TCiCorpTemp:
+    SOCIAL_CREDIT_FILE("SOCIAL_CREDIT_FILE", "统一社会信用代码证"),
+    ORG_CERT_FILE("ORG_CERT_FILE", "组织机构代码证"),
+    BUSI_LICENSE_FILE("BUSI_LICENSE_FILE", "营业执照"),
+    TAX_REGCERT_FILE("TAX_REGCERT_FILE", "税务登记证"),
+TCiCorpAuthTemp:
+    CA_AUTH_FILE("CA_AUTH_FILE", "数字证书使用承诺函"),
+    LEGAL_ID_FILE("LEGAL_ID_FILE", "法人身份证"),
+
+
