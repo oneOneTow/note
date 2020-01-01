@@ -113,12 +113,18 @@ db.orders.aggregate([
  
  
 ## mongo条件操作符
-* where score = 75 {“score”:75}
-* where score < 75 {“score”:{$lt:75}}
-* where score <+ 75 {"score" :{$lte:75}}
-* where score > 75 {"score":{$gt:75}}
-* where score >= 75 {"score": {$gte:75}}
-* where score != 75 {"score": {$ne:75}
+* where score = 75 
+> {“score”:75}
+* where score < 75 
+> {“score”:{$lt:75}}
+* where score <= 75 
+> {"score" :{$lte:75}}
+* where score > 75 
+>{"score":{$gt:75}}
+* where score >= 75 
+>{"score": {$gte:75}}
+* where score != 75 
+>{"score": {$ne:75}
 
 ## mongo存储引擎
 #### 如何配置存储引擎
