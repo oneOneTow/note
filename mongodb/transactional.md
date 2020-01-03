@@ -14,7 +14,7 @@
 * 在事务外创建的游标,在事务内不能调用getMore
 * 在事务内创建的游标，在事务外不能调用getMore
 * 4.2开始，不能在事务内的第一个操作就是 killCursors
-* 在事务内不能改变databanse的目录，例如创建或者删除collection,index
+* 在事务内不能改变database的目录，例如创建或者删除collection,index
 #### count operation
 * 4.0提供了countDocuments() as helper method，并且 The 4.0 drivers have deprecated the count() API.
 * Starting in MongoDB 4.0.3, the mongo shell provides the db.collection.countDocuments() helper method that uses the $group with a $sum expression to perform a count.
@@ -27,5 +27,8 @@
 * read concern majority 将会返回在这replica set成员大多数确认的数据（即不能回滚的数据）
 > 类似读提交
 * If the transaction does not use write concern “majority” for the commit, the "majority" read concern provides no guarantees that read operations read majority-committed data.
-*For transactions on sharded cluster, "majority" read concern cannot guarantee that the data is from the same snapshot view across the shards. If snapshot isolation is required, use "snapshot" read concern.
-
+* For transactions on sharded cluster, "majority" read concern cannot guarantee that the data is from the same snapshot view across the shards. If snapshot isolation is required, use "snapshot" read concern.
+##### snapshot
+* Read concern "snapshot" returns data from a snapshot of majority committed data if the transaction commits with write concern “majority”.
+* If the transaction does not use write concern “majority” for the commit, the "snapshot" read concern provides no guarantee that read operations used a snapshot of majority-committed data.
+* For transactions on sharded clusters, the "snapshot" view of the data is synchronized across shards.
