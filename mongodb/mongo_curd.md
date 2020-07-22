@@ -57,3 +57,5 @@ db.collections.find({"names":"lzq"}) //只要包含lzq的都会被查出来
 #### 只查询摸个字段
 *  
 ### 模糊查询
+db.partnerInteractiveLog.find({sourceSys:"XXWLH",requestUrl:{"$regex":"/v1/bab/issue\\?.*$"}})
+   .sort({requestDate:-1})
